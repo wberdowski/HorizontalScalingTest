@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34018.315
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{32FF174A-423E-421C-BE9B-EDB4CEE97923}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HSTService.Api", "src\HSTService.Api\HSTService.Api.csproj", "{5325BB96-5A9B-4FB7-A9C3-C249B90EAD02}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{04B7BE5A-D7E8-4484-8E92-7492E0ABB37C}"
+	ProjectSection(SolutionItems) = preProject
+		run-instances.bat = run-instances.bat
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Nginx|Any CPU = Nginx|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5325BB96-5A9B-4FB7-A9C3-C249B90EAD02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5325BB96-5A9B-4FB7-A9C3-C249B90EAD02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5325BB96-5A9B-4FB7-A9C3-C249B90EAD02}.Nginx|Any CPU.ActiveCfg = Nginx|Any CPU
+		{5325BB96-5A9B-4FB7-A9C3-C249B90EAD02}.Nginx|Any CPU.Build.0 = Nginx|Any CPU
+		{5325BB96-5A9B-4FB7-A9C3-C249B90EAD02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5325BB96-5A9B-4FB7-A9C3-C249B90EAD02}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5325BB96-5A9B-4FB7-A9C3-C249B90EAD02} = {32FF174A-423E-421C-BE9B-EDB4CEE97923}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {30D8AC5F-40C6-41EC-9194-EC47B0C63EF7}
+	EndGlobalSection
+EndGlobal
