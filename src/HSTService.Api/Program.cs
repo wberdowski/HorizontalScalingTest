@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using System.Net;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -19,11 +20,14 @@ app.UseHttpsRedirection();
 app.MapGet("/instance-info", () =>
 {
     app.Logger.LogInformation("Request served");
+    var hostname = Dns.GetHostName();
 
     return new
     {
         ServiceName = Assembly.GetExecutingAssembly().GetName().Name,
-        ProcessId = Process.GetCurrentProcess().Id
+        ProcessId = (ulong)Process.GetCurrentProcess().StartTime.GetHashCode(),
+        Hostname = hostname,
+        Addresses = Dns.GetHostEntry(hostname).AddressList.Select(a => a.ToString())
     };
 })
 .WithOpenApi();

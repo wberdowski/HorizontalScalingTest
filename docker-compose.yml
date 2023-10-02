@@ -7,16 +7,28 @@ services:
             - ./nginx.conf:/etc/nginx/nginx.conf
         ports:
             - "80:80"
-    hst:
-        # image: ${DOCKER_REGISTRY-}hst
-        # container_name: hst   
-        ports:
-            - "5001-5003:80"
+        depends_on:
+            - hst1
+            - hst2
+    hst1:
+        expose:
+            - "80"
+        hostname: hst1.docker
         build:
             context: .
             dockerfile: src/HSTService.Api/Dockerfile
-        deploy:
-            mode: replicated
-            replicas: 3     
-        depends_on:
-            - nginx
+    hst2:
+        expose:
+            - "80"
+        hostname: hst2.docker
+        build:
+            context: .
+            dockerfile: src/HSTService.Api/Dockerfile
+
+    hst3:
+        expose:
+            - "80"
+        hostname: hst3.docker
+        build:
+            context: .
+            dockerfile: src/HSTService.Api/Dockerfile
