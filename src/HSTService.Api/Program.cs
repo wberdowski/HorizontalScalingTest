@@ -17,7 +17,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.MapGet("/instance-info", () =>
+app.MapGet("/", () =>
 {
     app.Logger.LogInformation("Request served");
     var hostname = Dns.GetHostName();
@@ -25,7 +25,6 @@ app.MapGet("/instance-info", () =>
     return new
     {
         ServiceName = Assembly.GetExecutingAssembly().GetName().Name,
-        ProcessId = (ulong)Process.GetCurrentProcess().StartTime.GetHashCode(),
         Hostname = hostname,
         Addresses = Dns.GetHostEntry(hostname).AddressList.Select(a => a.ToString())
     };

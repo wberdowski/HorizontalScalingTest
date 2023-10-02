@@ -6,10 +6,11 @@ services:
         volumes:
             - ./nginx.conf:/etc/nginx/nginx.conf
         ports:
-            - "80:80"
+            - "5050:80"
         depends_on:
             - hst1
             - hst2
+
     hst1:
         expose:
             - "80"
@@ -17,6 +18,7 @@ services:
         build:
             context: .
             dockerfile: src/HSTService.Api/Dockerfile
+
     hst2:
         expose:
             - "80"
